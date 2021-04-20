@@ -56,7 +56,7 @@ function YouTubeForm() {
                         {
                             (props) => {
                                 const { field, form, meta } = props;
-                                console.log('render props ', props)
+                                // console.log('render props ', props)
                                 return <div>
                                     <input type="text" id="address" {...field} />
                                     {(meta.touched && meta.error) && <div>{meta.error}</div>}
