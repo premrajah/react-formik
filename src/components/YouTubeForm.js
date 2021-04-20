@@ -1,5 +1,5 @@
 import React from 'react'
-import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik';
+import { Formik, Form, Field, FastField, FieldArray, ErrorMessage } from 'formik';
 import * as Yup from 'yup'; // object schema validation
 import TextError from './TextError';
 
@@ -66,7 +66,7 @@ function YouTubeForm() {
 
                 <div className="form-control">
                     <label htmlFor="address">Address</label>
-                    <Field name="address">
+                    <FastField name="address">
                         {
                             (props) => {
                                 const { field, form, meta } = props;
@@ -77,7 +77,7 @@ function YouTubeForm() {
                                 </div>
                             }
                         }
-                    </Field>
+                    </FastField>
                 </div>
 
                 <div className="form-control">
