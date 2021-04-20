@@ -9,6 +9,10 @@ const initialValues = {
     channel: "",
     comments: "",
     address: "",
+    social: {
+        facebook: "",
+        twitter: ""
+    }
 }
 
 const onSubmit = values => {
@@ -49,7 +53,7 @@ function YouTubeForm() {
                 <div className="form-control">
                     <label htmlFor="channel">Channel</label>
                     <Field type="text" id="channel" name="channel" placeholder="Channel" />
-                    <ErrorMessage name="channel" />
+                    <ErrorMessage name="channel" component={TextError} />
 
                 </div>
 
@@ -72,6 +76,16 @@ function YouTubeForm() {
                             }
                         }
                     </Field>
+                </div>
+
+                <div className="form-control">
+                    <label htmlFor="facebook">Facebook</label>
+                    <Field type="text" id="facebook" name="social.facebook" />
+                </div>
+
+                <div className="form-control">
+                    <label htmlFor="twitter">Twitter</label>
+                    <Field type="text" id="twitter" name="social.twitter" />
                 </div>
 
                 <button type="submit">Submit</button>
