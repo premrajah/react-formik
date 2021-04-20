@@ -28,6 +28,25 @@ const validationSchema = Yup.object({
     address: Yup.string().required('Required!'),
 })
 
+const validateComments = value => {
+    let error;
+
+    if (!value) {
+        error = "Comments Required"
+    }
+
+    return error;
+}
+const validatePrimaryPhone = value => {
+    let error;
+
+    if (!value) {
+        error = "Phone Required"
+    }
+
+    return error;
+}
+
 function YouTubeForm() {
 
 
@@ -67,7 +86,8 @@ function YouTubeForm() {
 
                 <div className="form-control">
                     <label htmlFor="comments">Comments</label>
-                    <Field as="textarea" id="comments" name="comments" />
+                    <Field as="textarea" id="comments" name="comments" validate={validateComments} />
+                    <ErrorMessage name="comments" component={TextError} />
                 </div>
 
                 <div className="form-control">
@@ -98,7 +118,8 @@ function YouTubeForm() {
 
                 <div className="form-control">
                     <label htmlFor="primaryPh">Primary Phone Number</label>
-                    <Field type="text" id="primaryPh" name="phoneNumbers[0]" />
+                    <Field type="text" id="primaryPh" name="phoneNumbers[0]" validate={validatePrimaryPhone} />
+                    <ErrorMessage name="phoneNumbers[0]" component={TextError} />
                 </div>
 
                 <div className="form-control">
