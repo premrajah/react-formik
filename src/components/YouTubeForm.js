@@ -36,6 +36,7 @@ const onSubmit = (values, onSubmitProps) => {
 
 
     onSubmitProps.setSubmitting(false); // re-enable submit button after api call
+    onSubmitProps.resetForm();
 }
 
 const validationSchema = Yup.object({
@@ -190,6 +191,7 @@ function YouTubeForm() {
                                 channel: true,
                             })}>Visited All</button> */}
                             <button type="button" onClick={() => setFormValues(savedValues)}>Load Saved Data</button>
+                            <button type="reset">Reset</button>
                             <button type="submit" disabled={!formik.isValid || formik.isSubmitting}>Submit</button>
 
                         </Form>
