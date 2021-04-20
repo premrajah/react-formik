@@ -17,8 +17,11 @@ const initialValues = {
     phNumbers: [""],
 }
 
-const onSubmit = values => {
-    console.log('form data ', values)
+const onSubmit = (values, onSubmitProps) => {
+    console.log('form data ', values, onSubmitProps)
+
+
+    onSubmitProps.setSubmitting(false); // re-enable submit button after api call
 }
 
 const validationSchema = Yup.object({
@@ -170,7 +173,7 @@ function YouTubeForm() {
                                 email: true,
                                 channel: true,
                             })}>Visited All</button>
-                            <button type="submit" disabled={!formik.isValid}>Submit</button>
+                            <button type="submit" disabled={!formik.isValid || formik.isSubmitting}>Submit</button>
 
                         </Form>
                     )
