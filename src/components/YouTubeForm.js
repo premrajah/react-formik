@@ -57,6 +57,7 @@ function YouTubeForm() {
             onSubmit={onSubmit}
         // validateOnChange={false}
         // validateOnBlur={false}
+        // validateOnMount
         >
             {
                 formik => {
@@ -141,8 +142,7 @@ function YouTubeForm() {
                                             const { values } = form;
                                             const { phNumbers } = values;
 
-                                            console.log('form errors ', form.errors)
-
+                                            // console.log('form errors ', form.errors)
                                             // console.log('field array props ', fieldArrayProps);
                                             return <div>
                                                 {
@@ -170,7 +170,7 @@ function YouTubeForm() {
                                 email: true,
                                 channel: true,
                             })}>Visited All</button>
-                            <button type="submit">Submit</button>
+                            <button type="submit" disabled={!formik.isValid}>Submit</button>
 
                         </Form>
                     )
