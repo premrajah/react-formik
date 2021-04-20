@@ -19,6 +19,7 @@ const validationSchema = Yup.object({
     name: Yup.string().required('Required'),
     email: Yup.string().email('Invalid email').required('Required'),
     channel: Yup.string().required('Required'),
+    address: Yup.string().required('Required!')
 })
 
 function YouTubeForm() {
@@ -66,7 +67,7 @@ function YouTubeForm() {
                                 // console.log('render props ', props)
                                 return <div>
                                     <input type="text" id="address" {...field} />
-                                    {(meta.touched && meta.error) && <div>{meta.error}</div>}
+                                    {(meta.touched && meta.error) && <div className="error">{meta.error}</div>}
                                 </div>
                             }
                         }
