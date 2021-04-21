@@ -42,7 +42,7 @@ const validationSchema = Yup.object({
 
 const onSubmit = values => {
     console.log('submited form data ', values)
-    console.log("saved date ", JSON.parse(JSON.stringify(values)));
+    console.log("saved date ", JSON.parse(JSON.stringify(values.birthDate)));
 }
 
 
