@@ -12,6 +12,7 @@ label {
 input[type='text'],
 input[type='email'],
 input[type='radio'],
+input[type='password'],
 select,
 textarea {
   display: block;
