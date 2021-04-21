@@ -4,7 +4,7 @@ import TextError from './TextError';
 
 function TextArea(props) {
 
-    const { control, label, name, ...rest } = props;
+    const { label, name, ...rest } = props;
 
     return (
         <div className="form-control">

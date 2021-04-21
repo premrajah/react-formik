@@ -11,6 +11,8 @@ label {
 
 input[type='text'],
 input[type='email'],
+input[type='radio'],
+select,
 textarea {
   display: block;
   width: 400px;
@@ -31,7 +33,4 @@ textarea {
 
 .error {
   color: red;
-}
-
-textarea {
 }

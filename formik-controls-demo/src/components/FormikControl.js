@@ -1,5 +1,8 @@
 import React from 'react'
+import CheckBoxGroup from './CheckBoxGroup';
 import Input from './Input';
+import RadioButtons from './RadioButtons';
+import Select from './Select';
 import TextArea from './TextArea';
 
 function FormikControl(props) {
@@ -8,18 +11,15 @@ function FormikControl(props) {
 
     switch (control) {
         case "input":
-            return <Input {...rest} />;
+            return <Input {...rest} />
         case "textarea":
             return <TextArea {...rest} />
         case "select":
-
-            break;
+            return <Select {...rest} />
         case "radio":
-
-            break;
+            return <RadioButtons {...rest} />
         case "checkbox":
-
-            break;
+            return <CheckBoxGroup {...rest} />
         case "date":
 
             break;
